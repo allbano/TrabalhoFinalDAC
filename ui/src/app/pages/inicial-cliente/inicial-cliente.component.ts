@@ -15,7 +15,7 @@ interface Voo {
   standalone: true,
   imports: [CommonModule, FormsModule],
   templateUrl: './inicial-cliente.component.html',
-  styleUrls: ['./inicial-cliente.component.css']
+  styleUrls: ['./inicial-cliente.component.scss']
 })
 export class InicialClienteComponent {
   saldoMilhas: number = 15000;  // Exemplo de saldo inicial

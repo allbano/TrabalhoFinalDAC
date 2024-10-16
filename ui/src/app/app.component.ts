@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
-import { InicialClienteComponent } from './pages/inicial-cliente';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [InicialClienteComponent],
-  template: '<app-tela-inicial-cliente></app-tela-inicial-cliente>',
-  styleUrls: ['./app.component.css']
+  imports: [RouterModule, CommonModule],
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent {}
