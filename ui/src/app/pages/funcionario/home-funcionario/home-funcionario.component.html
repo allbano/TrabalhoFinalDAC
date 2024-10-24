@@ -4,7 +4,7 @@
   <div class="mb-4">
     <h4>Operações:</h4>
     <div class="d-flex justify-content-between mb-3">
-      <a routerLink="/" class="btn btn-primary btn-lg mr-2">Cadastrar Voo</a>
+      <a routerLink="/cadastro-voo" class="btn btn-primary btn-lg mr-2">Cadastrar Voo</a>
       <a routerLink="/crud-funcionario" class="btn btn-primary btn-lg mr-2">Gestão de Funcionários</a>
     </div>
   </div>
@@ -26,7 +26,8 @@
           <td>{{ reserva.aeroportoOrigem }}</td>
           <td>{{ reserva.aeroportoDestino }}</td>
           <td>
-            <button class="btn btn-info" (click)="verConfirmacao(reserva.id)">Confirmação de embarque</button>
+            <!--<button class="btn btn-info" (click)="verConfirmacao(reserva.id)">Confirmação de embarque</button>-->
+            <a routerLink="/confirmar-embarque" class="btn btn-info">Confirmação de embarque</a>
             <button class="btn btn-success" (click)="realizarVoo(reserva.id)">Realizar Voo</button>
             <button class="btn btn-danger" (click)="cancelarVoo(reserva.id)">Cancelar</button>
           </td>

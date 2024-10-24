@@ -1,0 +1,33 @@
+<div class="container mt-5">
+  <h2>Consultar Reserva</h2>
+  
+  <div class="form-group">
+    <label for="codigoReserva">Código da Reserva:</label>
+    <input type="text" class="form-control" id="codigoReserva" [(ngModel)]="codigoReserva" placeholder="Digite o código da reserva">
+  </div>
+
+  <button class="btn btn-primary mt-3" (click)="consultarReserva()">Consultar</button>
+
+  <div *ngIf="mensagemErro" class="alert alert-danger mt-3">
+    {{ mensagemErro }}
+  </div>
+
+  <div *ngIf="reserva" class="mt-4">
+    <h4>Detalhes da Reserva</h4>
+    <ul class="list-group list-unstyled">
+      <li class="list-group-item">Código da Reserva: {{ reserva.codigoReserva }}</li>
+      <li class="list-group-item">Data/Hora: {{ reserva.dataHora | date: 'dd/MM/yyyy HH:mm' }}</li>
+      <li class="list-group-item">Origem: {{ getVooOrigem(reserva.codigoVoo) }}</li>
+      <li class="list-group-item">Destino: {{ getVooDestino(reserva.codigoVoo) }}</li>
+      <li class="list-group-item">Passagens compradas: {{ reserva.qntdPassagens }}</li>
+      <li class="list-group-item">Custo Total (R$):{{ reserva.custoTotal  | currency: 'BRL' : 'symbol':'1.2-2'}}</li>
+      <li class="list-group-item">Milhas usadas: {{ reserva.milhasUsadas }}</li>
+      <li class="list-group-item">Estado da Reserva: {{ reserva.estado }}</li>
+    </ul>
+
+    <div *ngIf="isReservadoEValido(reserva)">
+      <button class="btn btn-success mt-3" (click)="fazerCheckin()">Fazer Check-in</button>
+      <button class="btn btn-danger mt-3" (click)="abrirModalCancelarReserva(reserva)">Cancelar Reserva</button>
+    </div>
+  </div>
+</div>

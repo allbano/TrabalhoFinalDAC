@@ -1,0 +1,26 @@
+<div class="container mt-4">
+  <h2 class="text-center">Menu do Funcionario</h2>
+
+  <div class="mb-4">
+    <h4>Operações:</h4>
+    <div class="d-flex justify-content-between mb-3">
+      <a routerLink="/home-funcionario" class="btn btn-primary btn-lg mr-2">Voltar</a>
+    </div>
+  </div>
+
+  <div class="mb-4">
+    <form (ngSubmit)="ConfirmarEmbarque()">
+
+      <div class="d-flex justify-content-center">
+        <h4>Insira o numero do assento que deseja embarcar</h4>
+      </div>
+      <div class="d-flex justify-content-center mb-4">
+        <input type="number" id="numeroAssento" name="numeroAssento" [(ngModel)]="assento.numero" required>
+      </div>
+      <div class="d-flex justify-content-center mb-2" width="30%">
+        <button type="submit" class="btn btn-primary w-30">confirmar embarque</button>
+      </div>
+
+    </form>
+  </div>
+</div>

@@ -35,10 +35,10 @@ public class ReservaController {
 
 	@GetMapping("/Reserva")
 	public List<ReservaCUDDTO> buscarTodosReservas() {
-		List<ReservaCUDDTO> buscarReservas = repoReserva.findAll();
+		List<ReservaCUD> buscarReservas = repoReserva.findAll();
 		List<ReservaCUDDTO> lista = new ArrayList<>();
 
-		for (ReservaCUDDTO Reserva : buscarReservas)
+		for (ReservaCUD Reserva : buscarReservas)
 			lista.add(mapper.map(Reserva, ReservaCUDDTO.class));
 
 		return lista;
@@ -79,7 +79,7 @@ public class ReservaController {
 			throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Não existe Reserva com esse id!");
 
 		buscarReserva.get().setCod(ReservaRecebido.getCod());
-		buscarReserva.get().setData_hora(ReservaRecebido.getData_hora());
+		buscarReserva.get().setDataHora(ReservaRecebido.getData_hora());
 		buscarReserva.get().setEstadoReserva(ReservaRecebido.getEstadoReserva());
 		buscarReserva.get().setCodVoo(ReservaRecebido.getCodVoo());
 		buscarReserva.get().setIdCliente(ReservaRecebido.getIdCliente());

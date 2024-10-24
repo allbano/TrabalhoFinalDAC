@@ -8,6 +8,7 @@ export class Cliente {
     public cep: string,
     public cidade: string,
     public estado: string,
-    public milhas: number
+    public milhas: number,
+    public id?: number
   ) {}
 }

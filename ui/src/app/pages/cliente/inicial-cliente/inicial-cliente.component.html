@@ -1,0 +1,38 @@
+<div class="container mt-4">
+    <!-- Saldo em milhas -->
+    <div class="mb-4">
+      <h4>Saldo em Milhas: <span class="badge bg-primary">{{ clienteLogado?.milhas }}</span></h4>
+    </div>
+  
+    <!-- Tabela de Reservas e Voos -->
+    <div class="mb-4">
+      <h3>Minhas Reservas e Voos</h3>
+      <table class="table table-bordered">
+        <thead class="table-light">
+          <tr>
+            <th>Código da Reserva</th>
+            <th>Data/Hora</th>
+            <th>Aeroporto Origem</th>
+            <th>Aeroporto Destino</th>
+            <th>Estado</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reserva of Reservas"> <!-- | orderBy: 'dataHora' -->
+            <ng-container *ngIf="['RESERVADO', 'EMBARCADO', 'CANCELADO VOO'].includes(reserva.estado)">
+              <td>{{ reserva.codigoReserva }}</td>
+              <td>{{ reserva.dataHora | date: 'dd/MM/yyyy HH:mm' }}</td>
+              <td>{{ getVooOrigem(reserva.codigoVoo) }}</td>
+              <td>{{ getVooDestino(reserva.codigoVoo) }}</td>
+              <td>{{ reserva.estado }}</td>
+              <td>
+                <button (click)="abrirModalVerReserva(reserva)">Ver Reserva</button>
+                <button *ngIf="reserva.estado === 'RESERVADO'" (click)="abrirModalCancelarReserva(reserva)">Cancelar Reserva</button>
+              </td>
+            </ng-container>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+  

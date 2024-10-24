@@ -1,0 +1,47 @@
+<nav class="navbar navbar-dark bg-dark">
+  <span class="navbar-brand">Empresa Aérea</span>
+
+  <div class="collapse navbar-collapse" id="navbarText">
+    <!-- Links para Cliente -->
+    <ul *ngIf="getUserTipo() === 'cliente'" class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a routerLink="/inicial-cliente" class="btn btn-primary btn-lg mr-2">Home</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/comprar-milhas" class="btn btn-primary btn-lg mr-2">Comprar Milhas</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/extrato-milhas" class="btn btn-primary btn-lg mr-2">Extrato de Milhas</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/efetuar-reserva" class="btn btn-primary btn-lg mr-2">Efetuar Reserva</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/consultar-reserva" class="btn btn-primary btn-lg mr-2">Consultar Reserva</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/checkin" class="btn btn-primary btn-lg">Fazer Check-in</a>
+      </li>
+    </ul>
+
+    <!-- Links para Funcionario -->
+    <ul *ngIf="getUserTipo() === 'Funcionario'" class="navbar-nav mr-auto"> 
+      <li class="nav-item">
+        <a routerLink="/home-funcionario" class="btn btn-primary btn-lg mr-2">Home</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/crud-funcionario" class="btn btn-primary btn-lg mr-2">Gestão de Funcionários</a>
+      </li>
+    </ul>
+
+    <span class="navbar-text">
+      <button type="button" class="btn btn-link" (click)="logout()">Logout</button>
+    </span>
+  </div>
+</nav>
+
+
+      
+      
+      
+      

@@ -1,55 +1,70 @@
 {
-  "hash": "956d6840",
-  "configHash": "479f3b5f",
-  "lockfileHash": "ff741a3a",
-  "browserHash": "4b0c3c67",
+  "hash": "94fc88ff",
+  "configHash": "1c3fd995",
+  "lockfileHash": "7a6e238d",
+  "browserHash": "b9f4f8a3",
   "optimized": {
     "@angular/common": {
       "src": "../../../../../node_modules/@angular/common/fesm2022/common.mjs",
       "file": "@angular_common.js",
-      "fileHash": "0c0bf33a",
+      "fileHash": "954dafe6",
       "needsInterop": false
     },
     "@angular/core": {
       "src": "../../../../../node_modules/@angular/core/fesm2022/core.mjs",
       "file": "@angular_core.js",
-      "fileHash": "bd6dfb2e",
+      "fileHash": "17adb3c7",
       "needsInterop": false
     },
     "@angular/forms": {
       "src": "../../../../../node_modules/@angular/forms/fesm2022/forms.mjs",
       "file": "@angular_forms.js",
-      "fileHash": "1cd29581",
+      "fileHash": "bd9bf792",
       "needsInterop": false
     },
     "@angular/platform-browser": {
       "src": "../../../../../node_modules/@angular/platform-browser/fesm2022/platform-browser.mjs",
       "file": "@angular_platform-browser.js",
-      "fileHash": "89c06100",
+      "fileHash": "0da7ba38",
       "needsInterop": false
     },
     "@angular/router": {
       "src": "../../../../../node_modules/@angular/router/fesm2022/router.mjs",
       "file": "@angular_router.js",
-      "fileHash": "18aecb5f",
+      "fileHash": "9c217d1d",
+      "needsInterop": false
+    },
+    "@ng-bootstrap/ng-bootstrap": {
+      "src": "../../../../../node_modules/@ng-bootstrap/ng-bootstrap/fesm2022/ng-bootstrap.mjs",
+      "file": "@ng-bootstrap_ng-bootstrap.js",
+      "fileHash": "b93a42f9",
       "needsInterop": false
     },
     "axios": {
       "src": "../../../../../node_modules/axios/index.js",
       "file": "axios.js",
-      "fileHash": "60ee953e",
+      "fileHash": "ba38e1fd",
+      "needsInterop": false
+    },
+    "ngx-mask": {
+      "src": "../../../../../node_modules/ngx-mask/fesm2022/ngx-mask.mjs",
+      "file": "ngx-mask.js",
+      "fileHash": "8650d33a",
       "needsInterop": false
     },
     "rxjs": {
       "src": "../../../../../node_modules/rxjs/dist/esm5/index.js",
       "file": "rxjs.js",
-      "fileHash": "babf4839",
+      "fileHash": "f35e3cf8",
       "needsInterop": false
     }
   },
   "chunks": {
     "chunk-OL3JFXGX": {
       "file": "chunk-OL3JFXGX.js"
+    },
+    "chunk-6KCCGAJO": {
+      "file": "chunk-6KCCGAJO.js"
     },
     "chunk-UZO4RZMD": {
       "file": "chunk-UZO4RZMD.js"

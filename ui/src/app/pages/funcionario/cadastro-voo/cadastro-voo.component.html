@@ -1,0 +1,58 @@
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class="card shadow">
+        <div class="card-header text-center bg-primary text-white">
+          <h2>Cadastro de Voo</h2>
+        </div>
+        <div class="card-body">
+          <form (ngSubmit)="cadastrarVoo()">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="codigoVoo" class="form-label">Código do Voo:</label>
+                <input type="text" class="form-control" id="codigoVoo" [(ngModel)]="voo.codigoVoo" name="codigoVoo" placeholder="TADS0000" required>
+              </div>
+              <div class="col-md-6">
+                <label for="dataHora" class="form-label">Data/Hora:</label>
+                <input type="datetime-local" class="form-control" id="dataHora" [(ngModel)]="voo.dataHora" name="dataHora" required>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="origem" class="form-label">Aeroporto de Origem:</label>
+                <input type="text" class="form-control" id="origem" [(ngModel)]="voo.origem" name="origem" required>
+              </div>
+              <div class="col-md-6">
+                <label for="destino" class="form-label">Aeroporto de Destino:</label>
+                <input type="text" class="form-control" id="destino" [(ngModel)]="voo.destino" name="destino" required>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="valorPassagem" class="form-label">Valor da Passagem (R$):</label>
+                <input type="number" class="form-control" id="valorPassagem" [(ngModel)]="voo.valorPassagem" name="valorPassagem" required (change)="calcularMilhas()">
+              </div>
+              <div class="col-md-6">
+                <label for="equivalenteMilhas" class="form-label">Equivalente em Milhas:</label>
+                <input type="number" class="form-control" id="equivalenteMilhas" [(ngModel)]="voo.equivalenteMilhas" name="equivalenteMilhas" disabled>
+              </div>
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="quantidadePoltronas" class="form-label">Quantidade de Poltronas:</label>
+                <input type="number" class="form-control" id="quantidadePoltronas" [(ngModel)]="voo.quantidadePoltronas" name="quantidadePoltronas" required>
+              </div>
+            </div>
+
+            <div class="d-flex justify-content-center">
+              <button type="submit" class="btn btn-primary w-50">Cadastrar Voo</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

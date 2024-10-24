@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <h1>Check-in</h1>
+  <p>Estes são seus voos que vão acontecer nas próximas 48 horas:</p>
+
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Código do Voo</th>
+        <th scope="col">Origem</th>
+        <th scope="col">Destino</th>
+        <th scope="col">Data/Hora</th>
+        <th scope="col">Ação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let voo of voos">
+        <td>{{ voo.codigoVoo }}</td>
+        <td>{{ voo.dataHora | date: 'dd/MM/yyyy HH:mm'}}</td>
+        <td>{{ voo.origem }}</td>
+        <td>{{ voo.destino }}</td>
+      </tr>
+      <tr *ngIf="voos.length === 0">
+        <td colspan="5" class="text-center">Nenhum voo disponível para check-in nas próximas 48 horas.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
