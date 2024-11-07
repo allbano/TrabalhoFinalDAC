@@ -5,14 +5,14 @@ services:
     hostname: dac-pg16
     volumes:
       - empresa-aerea-pg:/var/lib/postgresql/data
-      - /home/albano/github/TrabalhoFinalDAC/postgresql/init.sql:/tmp/init.sql
-      - /home/albano/github/TrabalhoFinalDAC/postgresql/docker-entrypoint.sh:/docker-entrypoint-initdb.d/docker-entrypoint.sh
+      - /Repositorios DAC/TrabalhoFinalDAC/postgresql/init.sql:/tmp/init.sql
+      - /Repositorios DAC/TrabalhoFinalDAC/postgresql/docker-entrypoint.sh:/docker-entrypoint-initdb.d/docker-entrypoint.sh
     ports:
       - "30001:5432"
     environment:
       DBPOSTGRES: dacdb
-      POSTGRES_USER: admdac
-      POSTGRES_PASSWORD: "dacsecret"
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: "admin"
     networks:
       - dac-net
 
@@ -31,6 +31,15 @@ services:
     networks:
       - dac-net
 
+  empresa-aerea-java:
+    image: openjdk:17-jdk-slim  # Ou uma imagem personalizada que você tenha
+    container_name: empresa-aerea-java
+    build: 
+      context: ./backend  # Substitua pelo caminho correto
+      dockerfile: Dockerfile  # Se você tiver um Dockerfile
+    ports:
+      - "8088:8080"  # Ou outra porta que sua aplicação use
+ 
 volumes:
   empresa-aerea-pg:
     driver: local
@@ -38,6 +47,9 @@ volumes:
   empresa-aerea-mongo:
     driver: local
     name: empresa-aerea-mongo 
+  empresa-aerea-java:
+    driver: local
+    name: empresa-aerea-java
 
 
 networks:

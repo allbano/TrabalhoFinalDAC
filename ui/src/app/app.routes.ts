@@ -13,6 +13,7 @@ import { clienteGuard } from './shared/guards/cliente.guard';
 import { funcionarioGuard } from './shared/guards/funcionario.guard';
 import { CadastroVooComponent } from './pages/funcionario/cadastro-voo/cadastro-voo.component';
 import { ConfirmarEmbarqueComponent } from './pages/funcionario/confirmar-embarque/confirmar-embarque.component';
+import { InserirFuncionarioComponent } from './pages/funcionario/inserir-funcionario/inserir-funcionario.component';
 
 export const routes: Routes = [
 
@@ -28,5 +29,6 @@ export const routes: Routes = [
     { path: 'home-funcionario', component: HomeFuncionarioComponent, canActivate: [funcionarioGuard] },
     { path: 'crud-funcionario', component: CrudFuncionarioComponent, canActivate: [funcionarioGuard] },
     { path: 'cadastro-voo', component: CadastroVooComponent, canActivate: [funcionarioGuard] },
-    { path: 'confirmar-embarque', component: ConfirmarEmbarqueComponent, canActivate: [funcionarioGuard] }
+    { path: 'confirmar-embarque', component: ConfirmarEmbarqueComponent, canActivate: [funcionarioGuard] },
+    { path: 'inserir-funcionario', component: InserirFuncionarioComponent, canActivate: [funcionarioGuard] }
 ];

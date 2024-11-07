@@ -11,11 +11,12 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { VerReservaComponent } from '../ver-reserva/ver-reserva.component';
 import { CancelarReservaComponent } from '../cancelar-reserva/cancelar-reserva.component';
 import { StorageService } from '../../../services/storage.service';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-tela-inicial-cliente',
   standalone: true,
-  imports: [CommonModule, FormsModule, NavbarComponent],
+  imports: [CommonModule, FormsModule, NavbarComponent, RouterModule],
   templateUrl: './inicial-cliente.component.html',
   styleUrls: ['./inicial-cliente.component.scss']
 })

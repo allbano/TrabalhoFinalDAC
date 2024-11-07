@@ -79,6 +79,9 @@ const authServiceProxy = httpProxy('http://host.docker.internal:5000', {
   }
 });
 
+const aeroportoServiceProxy = httpProxy('http://localhost:8080/aeroporto');
+
+
 const clientesServiceProxy = httpProxy('http://host.docker.internal:5001');
 const clientesPostServiceProxy = httpProxy('http://host.docker.internal:5001', {
   proxyReqBodyDecorator: function (bodyContent, srcReq) {
@@ -236,6 +239,11 @@ app.post('/login', (req, res, next) => {
 
 app.post('/logout', function (req, res) {
   res.json({ auth: false, token: null });
+});
+
+// Aeroporto
+app.get('/aeroporto', function (req, res, next) {
+  aeroportoServiceProxy(req, res, next);
 });
 
 // Clientes

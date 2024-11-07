@@ -14,7 +14,7 @@ export class UserService {
 
   constructor(private authService: AuthService) { }
 
-  login(username: string, password: string): boolean {
+  login(username: string, password: string): string {
     // Simulação de validação (substitua pela sua lógica de back-end real)
     const usuario: Usuario | undefined = this.Usuarios.find(user => user.login === username && user.senha === password);
     
@@ -22,16 +22,23 @@ export class UserService {
       // Aqui você pode armazenar o token ou qualquer outra lógica que desejar
       this.authService.logar(usuario);
       console.log('Login bem-sucedido:', usuario);
-      return true; // Retorna verdadeiro se o login foi bem-sucedido
+      return usuario.tipo; // Retorna verdadeiro se o login foi bem-sucedido
     } else {
       console.log('Falha no login: usuário ou senha inválidos.');
-      return false; // Retorna falso se o login falhar
+      return ""; // Retorna falso se o login falhar
     }
   }
 
   criarUsuarioCliente(login: string): void {
     const senha: string = this.generateRandomPassword();
     const user: Usuario = new Usuario(login,senha,"cliente",undefined);
+    this.Usuarios.push(user);
+    //Enviar Senha por email
+  }
+
+  criarUsuarioFuncionario(login: string): void {
+    const senha: string = this.generateRandomPassword();
+    const user: Usuario = new Usuario(login,senha,"funcionario",undefined);
     this.Usuarios.push(user);
     //Enviar Senha por email
   }
